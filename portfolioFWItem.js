@@ -12,6 +12,7 @@ module.exports = function(app){
     var item = this;
         item.reader = (item.reader !== undefined) ? item.reader : undefined;
         item.id = (item.id !== undefined) ? item.id : item.getData('id',undefined);
+        item.alias = (item.alias !== undefined) ? item.alias : item.getData('alias',undefined);
         item.timerAutoplay = null;
 
         if(item.reader !== undefined && item.id !== undefined)
@@ -58,8 +59,8 @@ module.exports = function(app){
                 }
                 var step = parseInt($(this).attr('data-step'));
                 // active state on gallery's nav
-                item.gallery.$nav.find('.item').removeClass('active').find('svg').removeClass('fa-dot-circle').addClass('fa-circle');
-                $(this).addClass('active').find('svg').addClass('fa-dot-circle');
+                item.gallery.$nav.find('.item').removeClass('active').find('svg').removeClass('fa-dot-circle').addClass('far fa-circle');
+                $(this).addClass('active').find('svg').addClass('far fa-dot-circle');
                 // active state on img container (non-necessary)
                 item.gallery.$imgs.parent().removeClass('active');
                 $(item.gallery.$imgs[step]).parent().addClass('active');
