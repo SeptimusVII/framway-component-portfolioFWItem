@@ -47,7 +47,7 @@ module.exports = function(app){
                     var stepImg = item.gallery.$nav.find('.item.active').attr('data-step');
                     item.$el.find('.wrapper').css('top', item.reader.$reader.outerHeight() * stepImg * -1);
                 };
-                var $nav_item = $('<span class="item" data-step="' + index + '"><i class="far fa-circle"></i></span>');
+                var $nav_item = $('<span class="item" data-step="' + index + '"><i class="far fa'+(index==0?'-dot':'')+'-circle"></i></span>');
                 item.gallery.$nav.append($nav_item);
             });
             item.gallery.$nav.find('.item').bind('click', function (e, pauseGallery) {
